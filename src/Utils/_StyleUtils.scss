@@ -1,24 +1,27 @@
 //header
-$header-bg: #759eda;
-$button-color: #5879c7;
+$clear-header-bg: #086ced;
+$partlycloudy-header-bg: #759eda;
+$storm-header-bg: #65645f;
+$drizzle-header-bg: #a0af9d;
+$fog-header-bg: #65645f;
+$mostlycloudy-header-bg: #1749ac;
+$unknown-header-bg: #086ced;
+$rain-header-bg: #8084b0;
+$clear-button-color: #1749ac;
+$partlycloudy-button-color: #5879c7;
+$rain-button-color: #5d5ea9;
+$storm-button-color: #65645f;
+$drizzle-button-color: #a0af9d;
+$fog-button-color: #65645f;
+$mostlycloudy-button-color: #1461b1;
+$unknown-button-color: #086ced;
 
 //body
-$clear-color: #9ccef4;
-
-//media queries for responsive design
-@mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$mini-desktop-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
-}
-@mixin mini-desktop {
-  @media (min-width: #{$mini-desktop-width}) and (max-width: #{$desktop-width - 1}) {
-    @content;
-  }
-}
+$clear-color: #2490c8;
+$partlycloudy-color: #9ccef4;
+$rain-color: #a2b4ae;
+$storm-color: #747880;
+$drizzle-color: #b7d0c5;
+$fog-color: #747880;
+$mostlycloudy-color: #3e9ef5;
+$unknown-color: #2490c8;

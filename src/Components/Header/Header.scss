@@ -14,13 +14,46 @@
     outline: none;
     background-color: transparent;
     color: #fff;
+    margin-inline-end: 1em;
+  }
+
+  .city-input:focus {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: $clear-button-color;
   }
 
   .find-btn {
-    background-color: $button-color;
     outline: none;
     border: none;
     text-transform: uppercase;
+    transition: background-color 1s ease-in;
+    cursor: pointer;
+  }
+
+  .find-btn.clear {
+    background-color: $clear-button-color;
+  }
+  .find-btn.partlycloudy {
+    background-color: $partlycloudy-button-color;
+  }
+  .find-btn.storm {
+    background-color: $storm-button-color;
+  }
+  .find-btn.drizzle {
+    background-color: $drizzle-button-color;
+  }
+  .find-btn.fog {
+    background-color: $fog-button-color;
+  }
+  .find-btn.mostlycloudy {
+    background-color: $mostlycloudy-button-color;
+  }
+  .find-btn.unknown {
+    background-color: $unknown-button-color;
   }
 
   ::placeholder {

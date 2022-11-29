@@ -7,13 +7,13 @@
 .app {
   min-height: 100vh;
   width: 100vw;
-  transition: background-color 1s ease-in;
   display: flex;
   flex-direction: column;
 }
 
 .app__header,
 .app__main {
+  transition: background-color 1s ease-in;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -24,19 +24,59 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.app__header {
-  background-color: $header-bg;
+.app__header.clear {
+  background-color: $clear-header-bg;
+}
+.app__header.partlycloudy {
+  background-color: $partlycloudy-header-bg;
+}
+.app__header.rain {
+  background-color: $rain-header-bg;
+}
+.app__header.storm {
+  background-color: $storm-header-bg;
+}
+.app__header.drizzle {
+  background-color: $drizzle-header-bg;
+}
+.app__header.fog {
+  background-color: $fog-header-bg;
+}
+.app__header.mostlycloudy {
+  background-color: $mostlycloudy-header-bg;
+}
+.app__header.unknown {
+  background-color: $unknown-header-bg;
 }
 
 .app__main {
   justify-content: center;
   flex: 1;
-  background-color: $clear-color;
+  // background-color: $clear-color;
   overflow-x: hidden;
 }
 
-/*  Search bar */
-
-/* Current weather */
-
-/* Future weather */
+.app__main.clear {
+  background-color: $clear-color;
+}
+.app__main.partlycloudy {
+  background-color: $partlycloudy-color;
+}
+.app__main.rain {
+  background-color: $rain-color;
+}
+.app__main.storm {
+  background-color: $storm-color;
+}
+.app__main.drizzle {
+  background-color: $drizzle-color;
+}
+.app__main.fog {
+  background-color: $fog-color;
+}
+.app__main.mostlycloudy {
+  background-color: $mostlycloudy-color;
+}
+.app__main.unknown {
+  background-color: $unknown-color;
+}

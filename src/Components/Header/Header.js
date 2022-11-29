@@ -16,7 +16,10 @@ function Header(props) {
         value={cityName}
         onChange={onNameChange}
       />
-      <button className="find-btn" onClick={() => props.search(cityName)}>
+      <button
+        className={`find-btn ${props.bgColor}`}
+        onClick={() => props.search(cityName)}
+      >
         Find Weather
       </button>
     </div>

@@ -6,9 +6,7 @@ function CurrentWeather({ data }) {
   const [imgSrc, setImgSrc] = useState("unknown");
 
   useEffect(() => {
-    console.log(data);
     if (typeof data !== "undefined") {
-      console.log(data.weather[0].id);
       setImgSrc(getWeatherImage(data.weather[0].id));
     }
   }, [data]);
