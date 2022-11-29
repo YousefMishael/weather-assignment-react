@@ -22,7 +22,7 @@ function WeatherItem({ item }) {
       <div>
         <img src={require(`../../../img/weather-icons/${imgSrc}.svg`)} />
       </div>
-      <div>{(item?.main?.temp - 273.15).toFixed(2)}&deg;C</div>
+      <div>{item?.main?.temp}&deg;C</div>
     </div>
   );
 }

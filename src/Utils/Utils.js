@@ -20,3 +20,20 @@ export function getWeatherImage(temp) {
       return "unknown";
   }
 }
+
+export function fetData(url) {
+  const resp = fetch(url, { method: "GET" }).then((resp) => {
+    if (resp.status === 200) {
+      return resp.json().then((data) => {
+        return data;
+      });
+    } else {
+      return {
+        cod: 200,
+        data: [],
+      };
+    }
+  });
+
+  return resp;
+}

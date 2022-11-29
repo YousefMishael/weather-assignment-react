@@ -19,18 +19,17 @@ function CurrentWeather({ data }) {
         src={require(`../../img/weather-icons/${imgSrc}.svg`)}
         className="weather-img"
       />
-      <div className="weather-title">overcast clouds</div>
+      <div className="weather-title">
+        {typeof data !== "undefined" ? data.weather[0].description : ""}
+      </div>
       <div className="temp-det-wrapper">
         <span className="temp-det">Temperature</span>{" "}
         <span className="temp-num-wrapper">
           <span className="temp-num">
             {/* converting from Kelvin to Celsius ==> K - 273.15 */}
-            {(data?.main?.temp_min - 273.15).toFixed(2)}
+            {data?.main?.temp_min}
           </span>
-          &deg; to{" "}
-          <span className="temp-num">
-            {(data?.main?.temp_max - 273.15).toFixed(2)}
-          </span>
+          &deg; to <span className="temp-num">{data?.main?.temp_max}</span>
           &deg;C
         </span>
       </div>
