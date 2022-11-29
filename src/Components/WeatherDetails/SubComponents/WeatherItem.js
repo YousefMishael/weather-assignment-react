@@ -1,14 +1,28 @@
-import React from "react";
-import clear from "../../../img/weather-icons/clear.svg";
+import React, { useEffect, useState } from "react";
+import { getWeatherImage } from "../../../Utils/Utils";
 
-function WeatherItem() {
+function WeatherItem({ item }) {
+  const [imgSrc, setImgSrc] = useState("unknown");
+  let dataTime = new Date(item?.dt_txt);
+
+  useEffect(() => {
+    if (typeof item.weather[0] !== "undefined") {
+      setImgSrc(getWeatherImage(item.weather[0].id));
+    }
+  }, []);
+
   return (
     <div className="temp-item-wrapper">
-      <div>03:00</div>
       <div>
-        <img src={clear} />
+        {dataTime.getHours()}:
+        {dataTime.getMinutes() < 10
+          ? "0" + dataTime.getMinutes()
+          : dataTime.getMinutes()}
       </div>
-      <div>8&deg;C</div>
+      <div>
+        <img src={require(`../../../img/weather-icons/${imgSrc}.svg`)} />
+      </div>
+      <div>{(item?.main?.temp - 273.15).toFixed(2)}&deg;C</div>
     </div>
   );
 }

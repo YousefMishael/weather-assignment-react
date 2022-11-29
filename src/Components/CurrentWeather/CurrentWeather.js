@@ -1,22 +1,42 @@
-import React from "react";
-import clear from "../../img/weather-icons/clear.svg";
-import partlycloudy from "../../img/weather-icons/partlycloudy.svg";
+import React, { useEffect, useState } from "react";
 import "./CurrentWeather.scss";
+import { getWeatherImage } from "../../Utils/Utils";
 
-function CurrentWeather() {
+function CurrentWeather({ data }) {
+  const [imgSrc, setImgSrc] = useState("unknown");
+
+  useEffect(() => {
+    console.log(data);
+    if (typeof data !== "undefined") {
+      console.log(data.weather[0].id);
+      setImgSrc(getWeatherImage(data.weather[0].id));
+    }
+  }, [data]);
+
   return (
     <div className="temp-wrapper">
-      <img src={partlycloudy} className="weather-img" />
+      <img
+        src={require(`../../img/weather-icons/${imgSrc}.svg`)}
+        className="weather-img"
+      />
       <div className="weather-title">overcast clouds</div>
       <div className="temp-det-wrapper">
-        <span className="temp-det">Temprature</span>{" "}
+        <span className="temp-det">Temperature</span>{" "}
         <span className="temp-num-wrapper">
-          <span className="temp-num">10</span>&deg; to{" "}
-          <span className="temp-num">11</span>&deg;C
+          <span className="temp-num">
+            {/* converting from Kelvin to Celsius ==> K - 273.15 */}
+            {(data?.main?.temp_min - 273.15).toFixed(2)}
+          </span>
+          &deg; to{" "}
+          <span className="temp-num">
+            {(data?.main?.temp_max - 273.15).toFixed(2)}
+          </span>
+          &deg;C
         </span>
       </div>
       <div className="det-wrapper">
-        Humidity&emsp;<span>78%</span>&emsp;Pressure&emsp;<span>1008.48</span>
+        Humidity&emsp;<span>{data?.main?.humidity}%</span>
+        &emsp;Pressure&emsp;<span>{data?.main?.pressure}</span>
       </div>
     </div>
   );
