@@ -1,0 +1,30 @@
+.weather-det-wrapper {
+  margin: 4em 0;
+  display: flex;
+  gap: 2em;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.temp-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  text-align: center;
+
+  img {
+    width: 4rem;
+  }
+
+  div {
+    font-variant-numeric: oldstyle-nums;
+    font-size: small;
+  }
+}
+
+@media (min-width: 970px) {
+  .weather-det-wrapper {
+    overflow-x: auto;
+    justify-content: center;
+  }
+}

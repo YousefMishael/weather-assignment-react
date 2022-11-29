@@ -1,0 +1,24 @@
+//header
+$header-bg: #759eda;
+$button-color: #5879c7;
+
+//body
+$clear-color: #9ccef4;
+
+//media queries for responsive design
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$mini-desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+@mixin mini-desktop {
+  @media (min-width: #{$mini-desktop-width}) and (max-width: #{$desktop-width - 1}) {
+    @content;
+  }
+}

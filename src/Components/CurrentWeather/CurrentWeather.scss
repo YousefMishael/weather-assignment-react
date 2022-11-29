@@ -1,0 +1,44 @@
+.temp-wrapper {
+  text-align: center;
+  font-size: 1.2rem;
+
+  color: #000;
+
+  .weather-img {
+    width: 10rem;
+    margin: 0;
+  }
+
+  .weather-title {
+    margin: -0.5em;
+    color: #fff;
+  }
+
+  .temp-det-wrapper {
+    margin: 2em 0;
+  }
+}
+.temp-det-wrapper {
+  font-family: sans-serif;
+  .temp-det {
+    font-weight: 500;
+    // font-family: sans-serif;
+  }
+  .temp-num-wrapper {
+    font-size: small;
+  }
+  .temp-num {
+    font-weight: lighter;
+    font-family: "Raleway";
+  }
+}
+.det-wrapper {
+  font-size: x-small;
+  font-weight: bold;
+
+  span {
+    // font-family: "Raleway";
+    font-weight: normal;
+    font-variant-numeric: oldstyle-nums;
+  }
+}
